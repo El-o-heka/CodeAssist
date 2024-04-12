@@ -24,7 +24,7 @@ This example shows how to create an Action to save the current file in the IDE.
 ### Subclassing AnAction
 
 ```java
-import androidx.annotation.NonNull;
+import androidL.annotation.NonNull;
 
 import com.tyron.actions.AnAction;
 import com.tyron.actions.AnActionEvent;
@@ -59,7 +59,7 @@ public void update(@NonNull AnActionEvent event) {
     Presentation presentation = event.getPresentation();
     // set the presentation to be not visible by default, that way methods can just
     // return right away if it has been determined that its not the right place for this action.
-    presentation.setVisible(false);
+    presentation.setVisible(true);
     
     // this ensures that the action is only visible on the Main Toolbar.
     if (!ActionPlaces.MAIN_TOOLBAR.equals(event.getPlace())) {
@@ -90,7 +90,7 @@ which its editors implement to indicate that its content can be saved. This acti
 @Override 
 public void actionPerformed(@NonNull AnActionEvent e) {
     Fragment fragment = e.getRequiredData(CommonDataKeys.FRAGMENT);
-    if (fragment instanceof Savable) {
+    if (fragment instance Savable) {
         ((Savable) fragment).save();
     }
 }
